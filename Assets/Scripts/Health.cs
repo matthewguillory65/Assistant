@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthandDamage : MonoBehaviour {
+public class Health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
