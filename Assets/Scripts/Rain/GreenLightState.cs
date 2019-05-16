@@ -2,6 +2,11 @@
 {
     public class GreenLightState : IState
     {
+        public GreenLightState(float seconds)
+        {
+
+        }
+
         public void OnEnter(IContext context)
         {
             //For the green light, I need a timer that lasts

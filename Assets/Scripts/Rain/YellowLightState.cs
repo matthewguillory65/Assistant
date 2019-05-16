@@ -2,6 +2,11 @@
 {
     public class YellowLightState : IState
     {
+
+        public YellowLightState(float seconds)
+        {
+
+        }
         public void OnEnter(IContext context)
         {
             //For the yellow light, I need a timer that lasts

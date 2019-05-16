@@ -2,6 +2,11 @@
 {
     public class RedLightState : IState
     {
+
+        public RedLightState(float seconds)
+        {
+
+        }
         public void OnEnter(IContext context)
         {
             //For the red light, I need a timer that lasts
