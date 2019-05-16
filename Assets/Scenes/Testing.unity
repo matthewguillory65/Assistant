@@ -458,7 +458,7 @@ MonoBehaviour:
   targetTran: {x: 0, y: 0, z: 0}
   player: {fileID: 2016954554}
   location: {x: 0, y: 0, z: 0}
-  collider: {fileID: 0}
+  collider: {fileID: 2009743269}
   line1: {fileID: 859840467}
   line2: {fileID: 319525863}
 --- !u!54 &294244028
