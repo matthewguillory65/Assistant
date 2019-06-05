@@ -7,7 +7,8 @@ namespace Rain.Behaviour
     public class ClosestPointCollider : MonoBehaviour
     {
         public static Vector3 closestpoint;
-        GameObject closestgameobj;
+        public GameObject closestgameobj;
+        public GameObject guard;
         void Start()
         {
             
@@ -17,7 +18,7 @@ namespace Rain.Behaviour
         {
 
         }
-        void OnTriggerEnter(Collider coll)
+        void OnCollisionEnter(Collision coll)
         {
             if (coll.gameObject.CompareTag("HideAble"))
             {
@@ -30,16 +31,16 @@ namespace Rain.Behaviour
         public bool WhosCloser(GameObject player)
         {
             bool IsItTho = false;
-            var closercollider = Vector3.Distance(closestpoint, transform.position);
-            var closerplayer = Vector3.Distance(player.transform.position, transform.position);
+            var closercollider = Vector3.Distance(closestpoint, guard.transform.position);
+            var closerplayer = Vector3.Distance(player.transform.position, guard.transform.position);
             if (closerplayer < closercollider)
             {
-                Debug.Log("Is working");
+                Debug.Log("I see you!");
                 IsItTho = true;
             }
-            else
+            else if(closerplayer > closercollider)
             {
-                Debug.Log("No working");
+                Debug.Log("Who's there");
                 IsItTho = false;
             }
 

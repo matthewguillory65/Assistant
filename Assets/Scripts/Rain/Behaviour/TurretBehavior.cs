@@ -28,25 +28,17 @@ namespace Rain.Behaviour
             {
                 for (int i = 0; i < cpc.Length; i++)
                 {
-                    if (cpc[i].WhosCloser(player) == false)
+                    if (cpc[i].WhosCloser(player))
                     {
                         agent.SetDestination(player.transform.position);
                         Debug.DrawLine(transform.position, player.transform.position, Color.blue);
                     }
-                    cpc[i].WhosCloser(player);
                 }
 
             }
             for (int i = 0; i < lines.Length; i++)
             {
                 Debug.DrawLine(transform.position, lines[i].transform.position, Color.black);
-            }
-
-
-
-            if (Physics.Raycast(transform.position, Vector3.forward, out hit, layermask))
-            {
-                Debug.Log("Hits fine");
             }
         }
     }
