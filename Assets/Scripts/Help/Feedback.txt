@@ -1,0 +1,3 @@
+Teleport more than once.
+Teleport back.
+Directions.
