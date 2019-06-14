@@ -8,21 +8,23 @@ namespace Rain.Behaviour
     public class BulletScript : MonoBehaviour
     {
         public GameObject bullet;
+        public Transform player;
         public static int numberofBullets = 20;
         public Text counter;
         float destructionTimer = 6;
         float timer = 0;
-        Health health;
+        public Transform spawn;
         // Use this for initialization
         void Start()
         {
-            health = GetComponent<Health>();
+            
         }
 
         // Update is called once per frame
         void Update()
         {
             counter.text = "Ammo: " + numberofBullets.ToString();
+            bullet.transform.forward = transform.forward;
             Shoot();
             Reload();
 
@@ -34,7 +36,9 @@ namespace Rain.Behaviour
             {
                 if (numberofBullets > 0)
                 {
-                    Instantiate(bullet, transform.position, Quaternion.identity);
+                    GameObject bull = Instantiate(bullet, spawn.position, Quaternion.identity) as GameObject;
+                    Rigidbody instBulletRigidbody = bull.GetComponent<Rigidbody>();
+                    instBulletRigidbody.AddForce(Vector3.forward * 5000);
                     --numberofBullets;
                 }
             }

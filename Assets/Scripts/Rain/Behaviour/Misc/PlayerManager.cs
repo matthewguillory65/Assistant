@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour {
-
-    #region Singleton
-
-    public static PlayerManager instance;
-
-    void Awake()
+namespace Rain.Behaviour
+{
+    public class PlayerManager : MonoBehaviour
     {
-        instance = this;
+
+        #region Singleton
+
+        public static PlayerManager instance;
+
+        void Awake()
+        {
+            instance = this;
+        }
+
+        #endregion
+
+        public GameObject player;
     }
 
-    #endregion
-
-    public GameObject player;
 }

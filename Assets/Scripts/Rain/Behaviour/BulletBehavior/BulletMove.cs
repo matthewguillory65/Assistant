@@ -10,13 +10,12 @@ namespace Rain.Behaviour
         // Use this for initialization
         void Start()
         {
-            
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            transform.Translate(transform.forward);
             Destroy(bullet, 4);
         }
     }
